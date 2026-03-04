@@ -20,6 +20,7 @@ const {
   DisconnectReason
 } = require('baileys');
 
+// Use require for config (not import)
 const config = require('./config');
 
 // ---------------- MONGO SETUP ----------------
