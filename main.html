@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧛‍♂️ SO MINI MD 🧛‍♂️</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header i {
+            font-size: 4rem;
+            color: #ff4d6d;
+            text-shadow: 0 0 20px #ff4d6d;
+            margin-bottom: 15px;
+        }
+        .header h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(45deg, #ff4d6d, #ff8fa3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .input-group input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .input-group button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #ff4d6d, #ff8fa3);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .input-group button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff4d6d;
+        }
+        .loader {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .loader i {
+            font-size: 2rem;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+        .result .code {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff4d6d;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .result .copy-hint {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .info {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .info-item {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            flex: 1 1 150px;
+        }
+        .info-item i {
+            font-size: 1.5rem;
+            color: #ff4d6d;
+            margin-bottom: 5px;
+        }
+        .info-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-robot"></i>
+            <h1>🧛‍♂️ SO MINI MD 🧛‍♂️</h1>
+            <p>Enter your WhatsApp number with country code</p>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="number" placeholder="9472xxxxxxx" value="94724389699">
+            <button id="submit">PAIR</button>
+        </div>
+
+        <div class="loader" id="loader">
+            <i class="fas fa-spinner"></i>
+            <p>Connecting...</p>
+        </div>
+
+        <div class="result" id="result">
+            <i class="fas fa-check-circle" style="color: #4CAF50; font-size: 2rem;"></i>
+            <p>Your Pairing Code:</p>
+            <div class="code" id="code"></div>
+            <div class="copy-hint">Click the code to copy</div>
+        </div>
+
+        <div class="info">
+            <div class="info-item">
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://whatsapp.com/channel/0029VbCMX3K7j6fxob6STf3C" target="_blank">Channel</a>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-users"></i>
+                <a href="https://chat.whatsapp.com/GnYQAKjoW8QD0vZL5abDk7" target="_blank">Group</a>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-user"></i>
+                <a href="https://wa.me/94724389699" target="_blank">Owner</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Powered by SHANUKA SHAMEEN | SO MINI BOT</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"></script>
+    <script>
+        document.getElementById('submit').addEventListener('click', async () => {
+            const number = document.getElementById('number').value.trim();
+            if (!number) {
+                alert('Please enter a number');
+                return;
+            }
+
+            document.getElementById('loader').style.display = 'block';
+            document.getElementById('result').style.display = 'none';
+
+            try {
+                const response = await axios.get(`/code?number=${number}`);
+                document.getElementById('loader').style.display = 'none';
+                
+                if (response.data.code) {
+                    document.getElementById('code').innerText = response.data.code;
+                    document.getElementById('result').style.display = 'block';
+                } else {
+                    alert('Failed to get code. Please try again.');
+                }
+            } catch (error) {
+                document.getElementById('loader').style.display = 'none';
+                alert('Error: ' + (error.response?.data?.error || error.message));
+            }
+        });
+
+        document.getElementById('code').addEventListener('click', function() {
+            const code = this.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Code copied!');
+            });
+        });
+    </script>
+</body>
+</html>
