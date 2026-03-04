@@ -1,21 +1,23 @@
+
 {
-    "name": "SO MINI MD",
-    "description": "SO MINI WhatsApp Bot with essential features",
-    "logo": "https://i.ibb.co/QF4wSsPh/IMG-20251223-WA0415.jpg",
-    "repository": "https://github.com/yourusername/so-mini",
-    "keywords": ["whatsapp", "bot", "so-mini"],
-    "success_url": "/",
-    "buildpacks": [{ "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" }],
-    "env": {
-        "PORT": {
-            "description": "Port for web app",
-            "value": "8002",
-            "required": false
-        },
-        "MONGO_URI": {
-            "description": "MongoDB connection string",
-            "value": "mongodb+srv://your-username:your-password@cluster.mongodb.net/",
-            "required": true
-        }
-    }
+    "name": "session name",
+    "description": "Web Session Generator",
+    "logo": "image url",
+    "repository": "https://github.com/username/sesssion name",
+    "keywords": ["Malvin-Tech"],
+    "success_url": "/", 
+    "buildpacks": [{ "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" } ],
+    "env": {      
+      "PORT": {
+        "description": "Port for web app.4000,5000,3000... any!",
+        "value": "5000",
+        "required": false 
+      },
+      "MESSAGE": {
+        "description": "Just Leave This Blank",
+        "value": "",
+        "required": false 
+      }
+    }   
+
 }

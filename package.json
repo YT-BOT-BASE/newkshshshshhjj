@@ -1,23 +1,43 @@
 {
-  "name": "so-mini-bot",
+  "name": "𝙲𝙷𝙰𝙼𝙰 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃",
   "version": "1.0.0",
-  "description": "SO MINI WhatsApp Bot - By SHANUKA SHAMEEN",
+  "description": "𝙲𝙷𝙰𝙼𝙰 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃 WhatsApp Bot with Multi-Number Support",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "npm:angularsockets",
+    "baileys": "github:Piko86/BlazeXBaileys",
     "express": "^4.18.2",
     "fs-extra": "^11.2.0",
     "pino": "^8.17.0",
-    "pino-pretty": "^10.3.1",
+    "jimp": "^0.16.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "ffmpeg-static": "^5.2.0",
+    "@octokit/rest": "^20.0.2",
+    "denethdev-ytmp3":"1.0.3",
+    "cheerio": "1.1.0",
+    "ruhend-scraper": "9.0.1",
+    "yt-search": "2.12.1",
+    "pdfkit": "^0.13.0",
+    "node-fetch": "3.3.2",
+    "sharp":"0.34.1",
+    "file-type": "21.0.0",
+    "axios": "^1.2.5",
     "moment-timezone": "^0.6.0",
-    "axios": "^1.6.7",
-    "mongodb": "^5.9.0",
-    "qrcode-terminal": "^0.12.0"
+    "mongodb": "^5.7.0"
   },
   "engines": {
-    "node": "18.x"
-  }
+    "node": ">=18.x"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "multi-device",
+    "baileys",
+    "sula-md"
+  ],
+  "author": "chama",
+  "license": "MIT"
 }

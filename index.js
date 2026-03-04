@@ -1,18 +1,18 @@
 const express = require('express');
 const app = express();
-const path = require('path');
+__path = process.cwd()
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 8002;
+let code = require('./pair'); 
 
-// Routes
-const pairRouter = require('./pair');
+require('events').EventEmitter.defaultMaxListeners = 500;
 
-app.use('/code', pairRouter);
-app.use('/pair', (req, res) => {
-    res.sendFile(path.join(__dirname, 'main.html'));
+app.use('/code', code);
+app.use('/pair', async (req, res, next) => {
+    res.sendFile(__path + '/pair.html')
 });
-app.use('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'main.html'));
+app.use('/', async (req, res, next) => {
+    res.sendFile(__path + '/main.html')
 });
 
 app.use(bodyParser.json());
@@ -20,12 +20,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(PORT, () => {
     console.log(`
-╔════════════════════════╗
-║    SO MINI BOT         ║
-║    BY SHANUKA SHAMEEN  ║
-╚════════════════════════╝
-Server running on http://localhost:${PORT}
-    `);
+Don't Forget To Give Star ‼️
+
+
+Server running on http://localhost:` + PORT)
 });
 
 module.exports = app;
